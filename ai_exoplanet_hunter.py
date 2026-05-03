@@ -17,7 +17,11 @@ from tensorflow.keras.models import load_model
 
 # --- YOUR PERSONAL NASA API KEY ---
 # Get your own key at https://api.nasa.gov/
-NASA_API_KEY = "YOUR_API_KEY_HERE"
+try:
+    NASA_API_KEY = st.secrets["NASA_API_KEY"]
+except KeyError:
+    NASA_API_KEY = ""
+    st.warning("NASA API Key is missing! Please configure it in Streamlit Secrets.")
 
 # 1. Page Configuration
 st.set_page_config(page_title="AI Exoplanet Hunter", layout="wide")
