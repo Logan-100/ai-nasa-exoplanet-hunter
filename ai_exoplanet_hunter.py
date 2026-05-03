@@ -23,6 +23,7 @@ except KeyError:
     NASA_API_KEY = ""
     st.warning("NASA API Key is missing! Please configure it in Streamlit Secrets.")
 
+
 # 1. Page Configuration
 st.set_page_config(page_title="AI Exoplanet Hunter", layout="wide")
 
